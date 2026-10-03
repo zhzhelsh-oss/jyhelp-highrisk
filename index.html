@@ -20,7 +20,7 @@
 const CFG = {
   brand:      "주영산업",
   bizName:    "주식회사 도미넌트 (주영산업)",
-  phone:      "010-9547-6077",          // ← 영상/카탈로그 번호는 010-3456-2185
+  phone:      "010-3456-2185",          // 상담문의 대표번호
   contact:    "이수오 팀장",
   year:       "2026",
   maxSubsidy: 30000000,                  // 무상 보조금 상한 (3,000만원)
@@ -75,20 +75,6 @@ const CFG = {
     ["05","선정 · 설치 · 정산","선정 통보 후 납품·설치, 완료 보고까지 전 과정을 대행합니다."]
   ],
 
-  // 파렛트적재대 대표 단가 (카탈로그 기준 · 현장설치/물류비 포함)
-  price: {
-    note: "주영산업 카탈로그 기준 · 현장설치 및 물류비 포함 · 1,100mm 파렛트 사용 가능",
-    groups: [
-      { t:"SFR-PR Type", spec:"2810 × 900 × 2500", load:"단당 하중 2,000kg",
-        rows:[["SFR-PR2","2단","762,000","228,600"],
-              ["SFR-PR3","3단","944,000","283,200"],
-              ["SFR-PR4","4단","1,126,000","337,800"]] },
-      { t:"SFR-PRH Type", spec:"2810 × 900 × 3300", load:"단당 하중 2,000kg",
-        rows:[["SFR-PR2H","2단","888,000","266,400"],
-              ["SFR-PR3H","3단","1,070,000","321,000"],
-              ["SFR-PR4H","4단","1,252,000","375,600"]] }
-    ]
-  }
 };
 
 // 리드 수신 엔드포인트 (Apps Script 웹앱 URL)
@@ -321,6 +307,9 @@ h2 em{font-style:normal;color:var(--or)}
   padding:4px 10px;border-radius:7px;letter-spacing:.04em;color:#fff}
 .ba-row .bdg.b{background:#5b6472}
 .ba-row .bdg.a{background:var(--gr)}
+.ba-row figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 11px 9px;
+  font-size:12px;font-weight:700;color:#fff;line-height:1.45;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.72))}
 .ba-ar{font-size:22px;color:var(--or);font-weight:900}
 .ba-note{margin-top:18px;text-align:center;font-size:13px;color:var(--mute);line-height:1.75}
 .bf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:9px;margin-top:26px}
@@ -379,7 +368,7 @@ h2 em{font-style:normal;color:var(--or)}
 .fgrp>label.lb{display:block;font-size:13.5px;font-weight:800;margin-bottom:7px;letter-spacing:-.02em}
 .req{color:var(--rd);margin-left:2px}
 .hint{font-size:12.5px;color:var(--mute);font-weight:600;margin-left:6px}
-input[type=text],input[type=tel],select,textarea{width:100%;border:1.5px solid var(--line);
+input[type=text],input[type=tel],input[type=email],select,textarea{width:100%;border:1.5px solid var(--line);
   border-radius:11px;padding:14px 15px;font-size:15.5px;font-family:inherit;background:#fbfcfd;
   transition:border-color .15s,background .15s;letter-spacing:-.02em}
 input:focus,select:focus,textarea:focus{outline:0;border-color:var(--or);background:#fff}
@@ -519,19 +508,6 @@ footer a{color:#c9d1dc}
   </div>
 </section>
 
-<!-- ================= 단가표 ================= -->
-<section style="background:var(--bg2)" id="price">
-  <div class="wrap">
-    <div class="sec-head fadein">
-      <span class="eyebrow">PRICE</span>
-      <h2>파렛트적재대 <em>대표 단가</em></h2>
-      <p>금액은 공급가액이며, 자부담은 지원 70% 적용 기준 예시입니다.</p>
-    </div>
-    <div class="ptab fadein" id="priceGrid"></div>
-    <div class="pnote fadein" id="priceNote"></div>
-  </div>
-</section>
-
 <!-- ================= 보조금 계산 ================= -->
 <section class="calc" id="calc">
   <div class="wrap">
@@ -586,11 +562,11 @@ footer a{color:#c9d1dc}
       <p>깨지고 기름진 바닥이 에폭시 바닥으로 바뀝니다.</p>
     </div>
     <div class="ba fadein" id="baGrid"></div>
-    <div class="ba-note fadein">※ 위 사진은 주영산업이 실제로 실측·시공한 현장 사진입니다.
-      전·후 사진은 각각 다른 현장의 사례로, 동일 현장의 전후 대비가 아닙니다.</div>
+    <div class="ba-note fadein">※ 위 전·후 사진은 <b>동일 현장</b>을 시공 전과 시공 완료 후에 촬영한
+      주영산업 실제 시공 사례입니다.</div>
 
     <div class="sec-head fadein" style="margin-top:46px;margin-bottom:16px">
-      <h2 style="font-size:clamp(19px,3.4vw,25px)">시공 전 — <em>실측 현장 기록</em></h2>
+      <h2 style="font-size:clamp(19px,3.4vw,25px)">상담 신청 현장 — <em>이런 바닥들입니다</em></h2>
     </div>
     <div class="bf-grid fadein" id="bfGrid"></div>
   </div>
@@ -685,6 +661,12 @@ footer a{color:#c9d1dc}
           </div>
 
           <div class="fgrp">
+            <label class="lb">이메일 <span class="hint">선택 · 견적서 받으실 주소</span></label>
+            <input type="email" name="email" inputmode="email" autocomplete="email"
+                   placeholder="예) manager@company.co.kr" />
+          </div>
+
+          <div class="fgrp">
             <label class="lb">사업장 주소<span class="req">*</span></label>
             <input type="text" name="address" placeholder="예) 경기도 화성시 ○○읍 ○○로" required />
           </div>
@@ -696,7 +678,7 @@ footer a{color:#c9d1dc}
 
           <label class="agree">
             <input type="checkbox" name="agree" required />
-            <span>개인정보 수집·이용에 동의합니다. (수집항목: 업체명·담당자·연락처·주소 / 목적: 지원사업 상담 / 보유: 상담 종료 후 1년)</span>
+            <span>개인정보 수집·이용에 동의합니다. (수집항목: 업체명·담당자·연락처·이메일·주소 / 목적: 지원사업 상담 및 견적 발송 / 보유: 상담 종료 후 1년)</span>
           </label>
 
           <button type="submit" class="btn btn-pri btn-lg" id="submitBtn">무료 상담 신청하기</button>
@@ -715,7 +697,7 @@ footer a{color:#c9d1dc}
     <div style="margin-top:14px;font-size:12.4px;color:#6b7684">
       ※ 본 페이지는 정부·공공기관 지원사업 안내를 위한 민간 사업자의 홍보 페이지이며, 공공기관의 공식 사이트가 아닙니다.<br>
       ※ 지원 대상·지원 비율·한도는 사업 공고 및 심사 결과에 따라 달라질 수 있습니다.<br>
-      ※ 게재된 단가는 카탈로그 기준 공급가액이며, 현장 여건에 따라 변동될 수 있습니다.
+      ※ 모든 금액은 공급가액 기준이며 부가세는 별도입니다. 세금계산서는 의무 발행됩니다.
     </div>
   </div>
 </footer>
@@ -772,21 +754,6 @@ footer a{color:#c9d1dc}
       </div>
     </article>`).join('');
 
-  /* ---- 단가표 ---- */
-  $('#priceGrid').innerHTML = CFG.price.groups.map(g=>`
-    <div class="pg">
-      <div class="h"><div class="t">${g.t}</div><div class="s">규격 ${g.spec}</div></div>
-      <table>
-        <thead><tr><th>모델명</th><th>단수</th><th>금액</th><th>자부담</th></tr></thead>
-        <tbody>${g.rows.map(r=>`<tr><td class="m">${r[0]}</td><td>${r[1]}</td>
-          <td>${r[2]}</td><td class="s">${r[3]}</td></tr>`).join('')}</tbody>
-      </table>
-      <div class="f">${g.load}</div>
-    </div>`).join('');
-  $('#priceNote').innerHTML = CFG.price.note +
-    '<br>※ 금액은 공급가액이며 <b>부가세 별도</b>입니다. 세금계산서는 의무 발행됩니다.' +
-    '<br>※ 적재대 400kg · 중량물 600kg · ARM랙 · 작업대 · 공구함 단가는 상담 시 안내드립니다.';
-
   /* ---- 품목 체크박스 ---- */
   $('#pickBox').innerHTML = CFG.items.map(it=>`
     <label class="pk">
@@ -812,15 +779,18 @@ footer a{color:#c9d1dc}
 
   /* ---- 바닥 전/후 ---- */
   const PAIRS = [
-    ['gal_floor3.jpg','기름·분진으로 오염된 바닥', 'after1.jpg','에폭시 라이닝 시공 완료'],
-    ['gal_floor6.jpg','깨지고 갈라진 통로',       'after2.jpg','평탄화 후 라인작업까지'],
-    ['gal_floor8.jpg','차선이 지워진 노후 바닥',   'after3.jpg','구획선 재도색 · 분진 차단']
+    ['ba1b.jpg','벗겨지고 패인 맨바닥 — 분진이 계속 올라옵니다',
+     'ba1a.jpg','에폭시 라이닝 시공 완료 — 거울처럼 매끈한 바닥'],
+    ['ba2b.jpg','도장이 다 벗겨지고 기름에 절은 가공공장 바닥',
+     'ba2a.jpg','전면 재시공 + 통로 구획선까지 — 광택 그대로']
   ];
   $('#baGrid').innerHTML = PAIRS.map(([b,bc,a,ac])=>`
     <div class="ba-row">
-      <figure><img src="images/${b}" alt="${bc}" loading="lazy"><span class="bdg b">BEFORE</span></figure>
+      <figure><img src="images/${b}" alt="${bc}" loading="lazy">
+        <span class="bdg b">BEFORE</span><figcaption>${bc}</figcaption></figure>
       <div class="ba-ar">➜</div>
-      <figure><img src="images/${a}" alt="${ac}" loading="lazy"><span class="bdg a">AFTER</span></figure>
+      <figure><img src="images/${a}" alt="${ac}" loading="lazy">
+        <span class="bdg a">AFTER</span><figcaption>${ac}</figcaption></figure>
     </div>`).join('');
 
   const bfCaps = ['기름에 절은 바닥','마모된 콘크리트','표면 박리','도장 들뜸','깨진 통로',
@@ -831,9 +801,8 @@ footer a{color:#c9d1dc}
 
   /* ---- 납품 갤러리 (탭) ---- */
   const GAL = {
-    '적재대 · 작업대': Array.from({length:6},(_,i)=>'gal_rk'+(i+1)+'.jpg'),
-    '고소작업대':      Array.from({length:6},(_,i)=>'gal_awp'+(i+1)+'.jpg'),
-    '바닥도장':        Array.from({length:6},(_,i)=>'after'+(i+1)+'.jpg')
+    '고소작업대 납품 · 설치': Array.from({length:6},(_,i)=>'gal_awp'+(i+1)+'.jpg'),
+    '바닥도장 시공 완료':     Array.from({length:6},(_,i)=>'gal_fl'+(i+1)+'.jpg')
   };
   const keys = Object.keys(GAL);
   $('#galTab').innerHTML = keys.map((k,i)=>`<button type="button"${i===0?' class="on"':''}>${k}</button>`).join('');
@@ -914,6 +883,9 @@ footer a{color:#c9d1dc}
     if(form.phone.value.replace(/[^0-9]/g,'').length<9)
                                    return show('연락처를 정확히 입력해 주세요.','err');
     if(!form.address.value.trim()) return show('사업장 주소를 입력해 주세요.','err');
+    const em = form.email.value.trim();
+    if(em && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em))
+                                   return show('이메일 주소를 정확히 입력해 주세요.','err');
     if(!form.agree.checked)        return show('개인정보 수집·이용 동의가 필요합니다.','err');
 
     btn.disabled=true; btn.textContent='전송 중...';
@@ -922,6 +894,7 @@ footer a{color:#c9d1dc}
       item: picked.join(', '), itemCount: picked.length, items: JSON.stringify(picked),
       company:form.company.value.trim(), manager:form.manager.value.trim(),
       position:form.position.value.trim(), phone:form.phone.value.trim(),
+      email: em,
       headcount:form.headcount.value, address:form.address.value.trim(),
       memo:form.memo.value.trim(), pageUrl:location.href,
       submittedAt:new Date().toISOString()
