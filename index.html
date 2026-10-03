@@ -918,14 +918,24 @@ footer a{color:#c9d1dc}
     if(!form.agree.checked)        return show('개인정보 수집·이용 동의가 필요합니다.','err');
 
     btn.disabled=true; btn.textContent='전송 중...';
+    const memo = form.memo.value.trim();
+    const hc   = form.headcount.value;
+    // 유입경로 칸에 신청품목·상시근로자·이메일·메모를 같이 실어 보냄
+    // (백엔드가 8칸만 기록하므로, 백엔드 패치 전까지 정보 손실 방지)
+    const trail = [location.href,
+                   '신청품목: ' + picked.join(' · '),
+                   hc   ? '상시근로자: ' + hc   : '',
+                   em   ? '이메일: '     + em   : '',
+                   memo ? '메모: '       + memo : ''].filter(Boolean).join(' | ');
     const data = {
       program:'고위험 개선사업',
-      item: picked.join(', '), itemCount: picked.length, items: JSON.stringify(picked),
+      // item 은 탭 라우팅 키 → 조합마다 탭이 생기지 않도록 고정값
+      item:'고위험 개선사업',
+      pickedItems: picked.join(' · '), itemCount: picked.length, items: JSON.stringify(picked),
       company:form.company.value.trim(), manager:form.manager.value.trim(),
       position:form.position.value.trim(), phone:form.phone.value.trim(),
-      email: em,
-      headcount:form.headcount.value, address:form.address.value.trim(),
-      memo:form.memo.value.trim(), pageUrl:location.href,
+      email: em, headcount: hc, address:form.address.value.trim(),
+      memo: memo, pageUrl: trail, landingUrl: location.href,
       submittedAt:new Date().toISOString()
     };
     try{
@@ -934,7 +944,7 @@ footer a{color:#c9d1dc}
           headers:{'Content-Type':'application/x-www-form-urlencoded'},
           body:new URLSearchParams(data).toString()});
       }
-      if(window.fbq) fbq('track','Lead',{content_name:data.item,num_items:picked.length});
+      if(window.fbq) fbq('track','Lead',{content_name:data.pickedItems,num_items:picked.length});
       if(window.gtag && TRACK.googleAdsId && TRACK.gadsConversionLabel){
         gtag('event','conversion',{send_to:TRACK.googleAdsId+'/'+TRACK.gadsConversionLabel,value:1,currency:'KRW'});
       }
