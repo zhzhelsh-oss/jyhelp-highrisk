@@ -819,16 +819,18 @@ footer a{color:#c9d1dc}
     <figure><img src="images/step_fl${i+1}.jpg" alt="${c}" loading="lazy">
       <span class="no">${i+1}</span><figcaption>${c}</figcaption></figure>`).join('');
 
-  const bfCaps = ['기름에 절은 바닥','마모된 콘크리트','표면 박리','도장 들뜸','깨진 통로',
-                  '갈라진 바닥','먼지 날림','차선 지워짐','노후 바닥'];
-  $('#bfGrid').innerHTML = bfCaps.map((c,i)=>`
-    <figure><img src="images/gal_floor${i+1}.jpg" alt="${c}" loading="lazy"
+  const BF = [[1,'도장이 벗겨진 바닥'], [3,'넓게 들뜬 표면 박리'], [6,'깨지고 파인 통로'],
+              [7,'갈라지고 메워진 바닥'], [5,'지게차 자국 · 분진'], [9,'지워진 통로 구획선'],
+              [2,'마모된 맨 콘크리트']];
+  $('#bfGrid').innerHTML = BF.map(([n,c])=>`
+    <figure><img src="images/gal_floor${n}.jpg" alt="${c}" loading="lazy"
       onerror="this.closest('figure').remove()"><figcaption>${c}</figcaption></figure>`).join('');
 
   /* ---- 납품 갤러리 (탭) ---- */
   const GAL = {
-    '고소작업대 납품 · 설치': Array.from({length:6},(_,i)=>'gal_awp'+(i+1)+'.jpg'),
-    '바닥도장 시공 완료':     Array.from({length:6},(_,i)=>'gal_fl'+(i+1)+'.jpg')
+    '적재대 · 파렛트랙': ['gal_rk1.jpg','gal_rk2.jpg','gal_rk3.jpg','gal_rk4.jpg','gal_rk5.jpg'],
+    '고소작업대':        ['gal_awp1.jpg','gal_awp2.jpg','gal_awp4.jpg','gal_awp5.jpg','gal_awp6.jpg'],
+    '바닥도장':          ['gal_fl1.jpg','gal_fl2.jpg','gal_fl3.jpg','gal_fl4.jpg','gal_fl5.jpg']
   };
   const keys = Object.keys(GAL);
   $('#galTab').innerHTML = keys.map((k,i)=>`<button type="button"${i===0?' class="on"':''}>${k}</button>`).join('');
