@@ -312,6 +312,16 @@ h2 em{font-style:normal;color:var(--or)}
   background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.72))}
 .ba-ar{font-size:22px;color:var(--or);font-weight:900}
 .ba-note{margin-top:18px;text-align:center;font-size:13px;color:var(--mute);line-height:1.75}
+.fl-step{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+@media(max-width:700px){.fl-step{grid-template-columns:repeat(2,1fr)}}
+.fl-step figure{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;
+  background:#e9edf2;border:1px solid var(--line)}
+.fl-step img{width:100%;height:100%;object-fit:cover}
+.fl-step .no{position:absolute;left:8px;top:8px;width:24px;height:24px;border-radius:50%;
+  background:var(--or);color:#fff;font-size:12px;font-weight:900;display:grid;place-items:center}
+.fl-step figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 10px 8px;
+  font-size:12.5px;font-weight:800;color:#fff;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.74))}
 .bf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:9px;margin-top:26px}
 .bf-grid figure{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:3/4;background:#dde2e8}
 .bf-grid img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
@@ -562,8 +572,13 @@ footer a{color:#c9d1dc}
       <p>깨지고 기름진 바닥이 에폭시 바닥으로 바뀝니다.</p>
     </div>
     <div class="ba fadein" id="baGrid"></div>
-    <div class="ba-note fadein">※ 위 전·후 사진은 <b>동일 현장</b>을 시공 전과 시공 완료 후에 촬영한
-      주영산업 실제 시공 사례입니다.</div>
+    <div class="ba-note fadein">※ 위 전·후 사진은 <b>같은 현장을 같은 각도에서</b> 시공 전과 시공 완료 후에
+      촬영한 주영산업 실제 시공 사례입니다.</div>
+
+    <div class="sec-head fadein" style="margin-top:46px;margin-bottom:16px">
+      <h2 style="font-size:clamp(19px,3.4vw,25px)">시공은 <em>4단계</em>로 진행됩니다</h2>
+    </div>
+    <div class="fl-step fadein" id="flStep"></div>
 
     <div class="sec-head fadein" style="margin-top:46px;margin-bottom:16px">
       <h2 style="font-size:clamp(19px,3.4vw,25px)">상담 신청 현장 — <em>이런 바닥들입니다</em></h2>
@@ -779,10 +794,12 @@ footer a{color:#c9d1dc}
 
   /* ---- 바닥 전/후 ---- */
   const PAIRS = [
-    ['ba1b.jpg','벗겨지고 패인 맨바닥 — 분진이 계속 올라옵니다',
-     'ba1a.jpg','에폭시 라이닝 시공 완료 — 거울처럼 매끈한 바닥'],
-    ['ba2b.jpg','도장이 다 벗겨지고 기름에 절은 가공공장 바닥',
-     'ba2a.jpg','전면 재시공 + 통로 구획선까지 — 광택 그대로']
+    ['ba1b.jpg','도장이 벗겨지고 기름에 절은 통로 · 구획선도 지워진 상태',
+     'ba1a.jpg','에폭시 라이닝 + 통로 구획선 재도색 — 거울처럼 매끈합니다'],
+    ['ba2b.jpg','분진이 올라오는 맨바닥 기계공장 · 청소해도 티가 안 납니다',
+     'ba2a.jpg','공장 전체 에폭시 시공 완료 — 조명이 그대로 비칩니다'],
+    ['ba3b.jpg','마감 전 콘크리트 바닥 · 분진 관리가 어려운 상태',
+     'ba3a.jpg','백색 에폭시 시공 완료 — 식품·정밀 작업장도 가능합니다']
   ];
   $('#baGrid').innerHTML = PAIRS.map(([b,bc,a,ac])=>`
     <div class="ba-row">
@@ -792,6 +809,15 @@ footer a{color:#c9d1dc}
       <figure><img src="images/${a}" alt="${ac}" loading="lazy">
         <span class="bdg a">AFTER</span><figcaption>${ac}</figcaption></figure>
     </div>`).join('');
+
+  /* ---- 바닥 시공 4단계 ---- */
+  const FSTEP = [['바닥 상태 확인 · 실측','시공 전'],
+                 ['연삭(그라인딩)으로 들뜬 층 제거','표면 처리'],
+                 ['하도(프라이머) 도포 · 건조','하도'],
+                 ['상도 에폭시 도장 · 구획선','시공 완료']];
+  $('#flStep').innerHTML = FSTEP.map(([c],i)=>`
+    <figure><img src="images/step_fl${i+1}.jpg" alt="${c}" loading="lazy">
+      <span class="no">${i+1}</span><figcaption>${c}</figcaption></figure>`).join('');
 
   const bfCaps = ['기름에 절은 바닥','마모된 콘크리트','표면 박리','도장 들뜸','깨진 통로',
                   '갈라진 바닥','먼지 날림','차선 지워짐','노후 바닥'];
