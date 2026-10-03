@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>2026 고위험 개선사업 | 최대 3,000만원 무상 지원 · 품목 중복신청 가능 - 주영산업</title>
+<meta name="description" content="1인 이상 50인 미만 사업장 대상. 스마트 습식청소기 · 고소작업대 · 파렛트랙/적재대 · 바닥도장공사를 한 번에 중복 신청하세요. 무상 보조금 최대 3,000만원." />
+<meta property="og:title" content="2026 고위험 개선사업 · 최대 3,000만원 무상지원" />
+<meta property="og:description" content="4개 품목 중복 신청 가능. 1인 이상 50인 미만 사업장이라면 지금 확인하세요." />
+<meta property="og:image" content="images/hero_grid.jpg" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<!-- ====================================================================== -->
+<!--  [1] 페이지 설정 — 여기만 바꾸면 됩니다                                   -->
+<!-- ====================================================================== -->
+<script>
+const CFG = {
+  brand:      "주영산업",
+  bizName:    "주식회사 도미넌트 (주영산업)",
+  phone:      "010-9547-6077",          // ← 영상 속 번호로 바꾸려면 010-3456-2185
+  contact:    "이수오 팀장",
+  kakaoUrl:   "",                        // 카톡 채널 주소 있으면 입력
+  year:       "2026",
+  maxSubsidy: 30000000,                  // 무상 보조금 상한 (3,000만원)
+
+  // ── 지원 품목 (체크박스 = 중복 선택 가능) ──
+  items: [
+    { key:"clean", name:"스마트 습식청소기",  en:"FLOOR SCRUBBER",
+      img:"images/item_clean.jpg",
+      tag:"분진·오염 제거",
+      desc:"바닥에 눌러붙은 기름·분진을 물청소로 한 번에 제거합니다. 작업자가 쓸고 닦던 시간을 그대로 생산에 돌려드립니다.",
+      specs:["보행형 · 탑승형 선택","1회 충전 2~4시간 연속 작업","분진 비산 억제 → 호흡기 재해 예방"] },
+
+    { key:"awp",   name:"고소작업대",          en:"AERIAL WORK PLATFORM",
+      img:"images/item_awp.jpg",
+      tag:"추락재해 1순위",
+      desc:"사다리·비계 대신 안전난간이 있는 작업대에서 작업합니다. 중대재해 1위인 추락사고를 설비로 차단합니다.",
+      specs:["작업높이 3.6m ~ 13.8m","시저형(바퀴) · 궤도형 선택","KCS 안전인증 / 12종 안전장치 기본"] },
+
+    { key:"rack",  name:"파렛트랙 · 적재대",    en:"PALLET RACK",
+      img:"images/item_rack.jpg",
+      tag:"붕괴·낙하 예방",
+      desc:"쌓아두던 자재를 규격 랙에 수납합니다. 적재물 붕괴·낙하 위험을 없애고 바닥 면적까지 되찾습니다.",
+      specs:["단별 하중 500kg ~ 1.5ton","현장 실측 후 맞춤 제작·설치","파렛트랙 / 중량랙 / 적재함 / 작업대"] },
+
+    { key:"floor", name:"바닥도장공사",        en:"FLOOR COATING",
+      img:"images/item_floor.jpg",
+      tag:"전도재해 예방",
+      desc:"기름지고 깨진 바닥, 흙먼지 날리는 바닥을 새 바닥으로 바꿉니다. 미끄러짐·걸려넘어짐 재해를 근본적으로 막습니다.",
+      specs:["에폭시 라이닝 / 우레탄 / 하드너","면적 제한 없음 · 현장 실측 견적","구획선·통로 표시 도색 포함 가능"] }
+  ],
+
+  // ── 보조금 예시 (영상과 동일) ──
+  example: { total: 42000000, subsidy: 30000000, self: 12000000 },
+
+  faq: [
+    ["여러 품목을 한꺼번에 신청해도 되나요?",
+     "됩니다. 이 사업은 <b>품목 중복 신청이 가능</b>합니다. 예를 들어 바닥도장공사와 적재대를 함께 신청해 총 사업비를 늘리고, 보조금 한도(최대 3,000만원)를 충분히 활용하실 수 있습니다. 아래 신청서에서 원하는 품목을 <b>여러 개 체크</b>해 주세요."],
+    ["우리 회사도 대상이 되나요?",
+     "산재보험 가입 사업장으로 <b>상시근로자 1인 이상 50인 미만</b>이면 신청 대상입니다. 업종·소재지에 따라 세부 조건이 달라질 수 있어, 사업자등록번호만 알려주시면 <b>대상 여부를 무료로 확인</b>해 드립니다."],
+    ["자부담금은 얼마나 드나요?",
+     "총 사업비에서 보조금을 뺀 금액입니다. 영상 예시처럼 <b>4,200만원 신청 시 보조금 3,000만원 · 자부담 1,200만원</b>이 됩니다. 품목·사업유형에 따라 지원 비율이 달라지므로 견적 단계에서 정확히 계산해 드립니다."],
+    ["서류 작업이 복잡하지 않나요?",
+     "신청서·견적서·카탈로그·도면 등 <b>제출서류 일체를 저희가 대신 준비</b>합니다. 고객사는 사업자등록증 사본과 서명만 해주시면 됩니다."],
+    ["선정이 안 되면 어떻게 되나요?",
+     "선정되지 않으면 계약은 <b>진행되지 않으며 비용도 발생하지 않습니다</b>. 상담·실측·견적까지 전 과정 무료입니다."],
+    ["접수는 언제까지인가요?",
+     "예산 소진 시 조기 마감되는 사업입니다. 연초·상반기에 신청이 몰리므로 <b>가능한 빨리</b> 접수하시는 것이 유리합니다."]
+  ],
+
+  steps: [
+    ["01","무료 상담 신청","아래 양식에 품목을 체크하고 연락처만 남겨주세요. 영업일 1일 이내 연락드립니다."],
+    ["02","대상 여부 확인","사업자등록번호로 지원 대상·지원 비율·한도를 확인해 알려드립니다."],
+    ["03","현장 실측 · 견적","담당자가 방문해 실측 후 품목별 견적과 예상 자부담금을 산출합니다."],
+    ["04","서류 작성 · 접수","신청서 일체를 저희가 작성해 공단에 접수합니다. 고객사는 서명만 하시면 됩니다."],
+    ["05","선정 · 설치 · 정산","선정 통보 후 납품·설치, 완료 보고까지 전 과정을 대행합니다."]
+  ]
+};
+
+// 리드 수신 엔드포인트 (Apps Script 웹앱 URL)
+const ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+
+// 광고 추적 (쓰실 때만 값 입력)
+const TRACK = { metaPixel:"", googleAdsId:"", gadsConversionLabel:"", ga4Id:"" };
+</script>
+
+<style>
+:root{
+  --ink:#0d1117; --ink2:#1c2230; --mute:#6b7684; --line:#e6e9ef;
+  --or:#ff7a1a; --or2:#ff9a4d; --or-dk:#d85f00;
+  --bl:#1769e0; --gr:#13a06a; --rd:#e03131;
+  --bg:#ffffff; --bg2:#f6f7f9;
+  --max:1120px; --r:16px;
+  --sh:0 6px 24px rgba(13,17,23,.08);
+  --sh2:0 14px 48px rgba(13,17,23,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,"Malgun Gothic",sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased;
+  font-size:16px;letter-spacing:-.015em;overflow-x:hidden;padding-bottom:70px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:68px 0}
+.sec-head{text-align:center;margin-bottom:38px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;
+  color:var(--or-dk);background:#fff3e8;border-radius:999px;padding:6px 14px;margin-bottom:14px}
+h2{font-size:clamp(23px,4.6vw,34px);font-weight:800;line-height:1.3;letter-spacing:-.03em}
+h2 em{font-style:normal;color:var(--or)}
+.sec-head p{margin-top:12px;color:var(--mute);font-size:15.5px}
+
+/* ---------- 상단 고정 바 ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line);
+  transform:translateY(-100%);transition:transform .28s}
+.topbar.show{transform:none}
+.topbar .in{max-width:var(--max);margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px}
+.topbar .lg{font-weight:900;font-size:16px;letter-spacing:-.04em}
+.topbar .lg span{color:var(--or)}
+.topbar .sp{flex:1}
+.tb-btn{font-size:13.5px;font-weight:800;padding:9px 16px;border-radius:10px;white-space:nowrap}
+.tb-btn.g{background:var(--ink);color:#fff}
+.tb-btn.o{background:var(--or);color:#fff}
+@media(max-width:560px){.topbar .lg{font-size:14px}.tb-btn{padding:8px 12px;font-size:12.5px}}
+
+/* ---------- 히어로 ---------- */
+.hero{position:relative;min-height:min(104vh,860px);display:flex;align-items:center;
+  background:#0a0d12;color:#fff;overflow:hidden;padding:92px 0 64px}
+.hero video,.hero .hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,13,18,.82) 0%,rgba(10,13,18,.55) 38%,rgba(10,13,18,.94) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.h-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,122,26,.18);
+  border:1px solid rgba(255,154,77,.5);color:#ffc08a;font-size:13px;font-weight:800;
+  padding:7px 15px;border-radius:999px;margin-bottom:18px}
+.h-badge b{color:#fff}
+.hero h1{font-size:clamp(31px,7.2vw,58px);font-weight:900;line-height:1.18;letter-spacing:-.04em}
+.hero h1 em{font-style:normal;color:var(--or2);
+  text-shadow:0 2px 24px rgba(255,122,26,.45)}
+.hero .sub{margin-top:18px;font-size:clamp(15px,2.6vw,18.5px);color:#c9d1dc;max-width:620px;line-height:1.7}
+.hero .sub b{color:#fff}
+
+.h-money{margin-top:30px;display:inline-flex;flex-direction:column;gap:2px;
+  background:linear-gradient(135deg,rgba(255,122,26,.16),rgba(255,122,26,.04));
+  border:1px solid rgba(255,154,77,.42);border-radius:18px;padding:18px 26px}
+.h-money .k{font-size:13px;font-weight:700;color:#ffc08a;letter-spacing:.04em}
+.h-money .v{font-size:clamp(30px,6.4vw,46px);font-weight:900;letter-spacing:-.04em;line-height:1.15}
+.h-money .v small{font-size:.44em;font-weight:800;color:#c9d1dc;margin-left:6px}
+
+.h-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:11px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:800;font-size:16px;padding:16px 28px;border-radius:13px;border:0;cursor:pointer;
+  transition:transform .14s,box-shadow .14s,background .14s;letter-spacing:-.02em}
+.btn:active{transform:scale(.975)}
+.btn-pri{background:linear-gradient(135deg,var(--or),#ff9436);color:#fff;
+  box-shadow:0 8px 26px rgba(255,122,26,.42)}
+.btn-pri:hover{box-shadow:0 12px 34px rgba(255,122,26,.55)}
+.btn-gho{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.34)}
+.btn-gho:hover{background:rgba(255,255,255,.18)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-lg{width:100%;padding:19px;font-size:17.5px}
+
+.h-chips{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+  color:#dbe2ea;font-size:13px;font-weight:700;padding:7px 13px;border-radius:9px}
+.chip b{color:var(--or2)}
+
+/* ---------- 숫자 밴드 ---------- */
+.band{background:var(--ink);color:#fff;padding:0}
+.band .in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.band .c{padding:26px 14px;text-align:center;border-left:1px solid rgba(255,255,255,.1)}
+.band .c:first-child{border-left:0}
+.band .n{font-size:clamp(19px,3.4vw,27px);font-weight:900;color:var(--or2);letter-spacing:-.03em}
+.band .l{font-size:12.5px;color:#9aa6b4;margin-top:3px;font-weight:600}
+@media(max-width:640px){.band .in{grid-template-columns:repeat(2,1fr)}
+  .band .c:nth-child(3),.band .c:nth-child(4){border-top:1px solid rgba(255,255,255,.1)}
+  .band .c:nth-child(3){border-left:0}}
+
+/* ---------- 중복신청 강조 ---------- */
+.dup{background:linear-gradient(135deg,#fff6ee,#fff);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dup-box{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:center;text-align:center}
+.dup-box .big{font-size:clamp(22px,4.4vw,34px);font-weight:900;letter-spacing:-.035em;line-height:1.35}
+.dup-box .big mark{background:linear-gradient(180deg,transparent 56%,#ffd9b8 56%);color:inherit;padding:0 3px}
+.dup-box .big em{font-style:normal;color:var(--or)}
+.dup-box .sm{color:var(--mute);font-size:15px;margin-top:10px}
+
+/* ---------- 품목 카드 ---------- */
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+@media(max-width:800px){.items{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.card .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:#eef1f5}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .tag{position:absolute;top:12px;left:12px;background:var(--rd);color:#fff;
+  font-size:11.5px;font-weight:800;padding:5px 11px;border-radius:7px;letter-spacing:-.01em}
+.card .no{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;
+  background:rgba(13,17,23,.78);color:#fff;font-size:13px;font-weight:900;
+  display:grid;place-items:center}
+.card .bd{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.card .en{font-size:10.5px;font-weight:800;letter-spacing:.14em;color:var(--or-dk)}
+.card h3{font-size:21px;font-weight:800;margin:4px 0 9px;letter-spacing:-.03em}
+.card .ds{font-size:14.6px;color:#4a5462;line-height:1.68}
+.card ul{list-style:none;margin:15px 0 0;border-top:1px dashed var(--line);padding-top:13px}
+.card li{font-size:13.8px;color:#38404c;padding-left:19px;position:relative;margin-bottom:5px;font-weight:600}
+.card li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;
+  border-radius:50%;background:var(--or)}
+.card .pick{margin-top:16px;display:flex;align-items:center;justify-content:center;gap:7px;
+  background:#fff3e8;color:var(--or-dk);border:1px dashed var(--or2);border-radius:10px;
+  padding:11px;font-size:14px;font-weight:800;cursor:pointer;transition:background .14s}
+.card .pick:hover{background:#ffe8d4}
+
+/* ---------- 보조금 계산 ---------- */
+.calc{background:var(--ink);color:#fff}
+.calc .sec-head h2{color:#fff}
+.calc .sec-head p{color:#9aa6b4}
+.calc .eyebrow{background:rgba(255,122,26,.16);color:#ffc08a}
+.ex{max-width:760px;margin:0 auto;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:30px}
+.ex .t{text-align:center;font-size:15px;color:#9aa6b4;margin-bottom:22px}
+.ex .t b{color:#fff}
+.ex-row{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px}
+@media(max-width:700px){.ex-row{grid-template-columns:1fr;gap:6px}
+  .ex-op{transform:rotate(90deg);margin:2px auto}}
+.ex-c{text-align:center;padding:18px 10px;border-radius:14px;background:rgba(255,255,255,.05)}
+.ex-c.sub{background:linear-gradient(135deg,rgba(255,122,26,.2),rgba(255,122,26,.07));
+  border:1px solid rgba(255,154,77,.42)}
+.ex-c.self{background:rgba(23,105,224,.14);border:1px solid rgba(23,105,224,.4)}
+.ex-c .k{font-size:12.5px;color:#9aa6b4;font-weight:700}
+.ex-c .v{font-size:clamp(20px,4vw,28px);font-weight:900;letter-spacing:-.035em;margin-top:4px}
+.ex-c.sub .v{color:var(--or2)}
+.ex-c.self .v{color:#7eb4ff}
+.ex-op{font-size:24px;font-weight:800;color:#6b7684;text-align:center}
+.ex-note{margin-top:20px;font-size:13px;color:#9aa6b4;text-align:center;line-height:1.7}
+
+.slider{max-width:760px;margin:26px auto 0;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:24px 26px}
+.slider .lb{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:#9aa6b4;font-weight:700}
+.slider .lb b{font-size:21px;color:#fff;font-weight:900;letter-spacing:-.03em}
+.slider input[type=range]{width:100%;margin:16px 0 4px;accent-color:var(--or);height:6px}
+.slider .out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.slider .out div{background:rgba(255,255,255,.05);border-radius:12px;padding:14px;text-align:center}
+.slider .out .k{font-size:12.5px;color:#9aa6b4;font-weight:700}
+.slider .out .v{font-size:clamp(18px,3.6vw,24px);font-weight:900;margin-top:3px;letter-spacing:-.03em}
+.slider .out .s .v{color:var(--or2)}
+.slider .out .f .v{color:#7eb4ff}
+
+/* ---------- 바닥 전/후 ---------- */
+.before{background:var(--bg2)}
+.bf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.bf-grid figure{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/4;background:#dde2e8}
+.bf-grid img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.bf-grid figcaption{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.72));
+  color:#fff;font-size:11.5px;font-weight:700;padding:16px 9px 7px}
+.bf-after{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+@media(max-width:700px){.bf-after{grid-template-columns:1fr}}
+.bf-after img{border-radius:14px;box-shadow:var(--sh)}
+.bf-after .tx h3{font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+.bf-after .tx p{color:#4a5462;font-size:15px}
+.bf-after .tx ul{list-style:none;margin-top:14px}
+.bf-after .tx li{font-size:14.5px;font-weight:700;padding-left:24px;position:relative;margin-bottom:7px}
+.bf-after .tx li::before{content:"✓";position:absolute;left:0;color:var(--gr);font-weight:900}
+
+/* ---------- 갤러리 ---------- */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.gal figure{border-radius:13px;overflow:hidden;aspect-ratio:4/3;background:#e9edf2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal figure:hover img{transform:scale(1.07)}
+
+/* ---------- 절차 ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 17px;position:relative;box-shadow:var(--sh)}
+.step .n{font-size:12px;font-weight:900;color:#fff;background:var(--ink);width:30px;height:30px;
+  border-radius:9px;display:grid;place-items:center;margin-bottom:11px}
+.step.hi .n{background:var(--or)}
+.step h4{font-size:16px;font-weight:800;letter-spacing:-.03em;margin-bottom:6px}
+.step p{font-size:13.6px;color:#5b6472;line-height:1.62}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:840px;margin:0 auto}
+.fq{border:1px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden;background:#fff}
+.fq summary{list-style:none;cursor:pointer;padding:18px 54px 18px 20px;font-weight:800;
+  font-size:16px;position:relative;letter-spacing:-.025em}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-size:24px;font-weight:400;color:var(--or);transition:transform .2s}
+.fq[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.fq[open] summary{background:#fff8f2}
+.fq .a{padding:4px 20px 20px;color:#4a5462;font-size:15px;line-height:1.76;border-top:1px solid var(--line);padding-top:16px}
+.fq .a b{color:var(--ink);background:#fff3e8;padding:1px 4px;border-radius:4px}
+
+/* ---------- 신청 폼 ---------- */
+.apply{background:linear-gradient(180deg,#f6f7f9,#eceff3)}
+.fm{max-width:640px;margin:0 auto;background:#fff;border-radius:22px;
+  box-shadow:0 18px 60px rgba(13,17,23,.14);overflow:hidden}
+.fm-hd{background:linear-gradient(135deg,var(--ink),#20293a);color:#fff;padding:28px 28px 24px;text-align:center}
+.fm-hd .k{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--or2)}
+.fm-hd h3{font-size:clamp(21px,4vw,27px);font-weight:900;margin-top:7px;letter-spacing:-.035em}
+.fm-hd p{font-size:14px;color:#9aa6b4;margin-top:8px}
+.fm-bd{padding:26px 28px 30px}
+@media(max-width:520px){.fm-bd{padding:22px 18px 26px}.fm-hd{padding:24px 18px 20px}}
+
+.fgrp{margin-bottom:17px}
+.fgrp>label.lb{display:block;font-size:13.5px;font-weight:800;margin-bottom:7px;letter-spacing:-.02em}
+.req{color:var(--rd);margin-left:2px}
+.hint{font-size:12.5px;color:var(--mute);font-weight:600;margin-left:6px}
+input[type=text],input[type=tel],select,textarea{width:100%;border:1.5px solid var(--line);
+  border-radius:11px;padding:14px 15px;font-size:15.5px;font-family:inherit;background:#fbfcfd;
+  transition:border-color .15s,background .15s;letter-spacing:-.02em}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--or);background:#fff}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+@media(max-width:440px){.g2{grid-template-columns:1fr}}
+
+/* 품목 체크박스 (핵심) */
+.picks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:520px){.picks{grid-template-columns:1fr}}
+.pk{position:relative}
+.pk input{position:absolute;opacity:0;width:0;height:0}
+.pk span{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;
+  padding:13px 13px;font-size:14.8px;font-weight:700;cursor:pointer;background:#fbfcfd;
+  transition:all .15s;letter-spacing:-.025em;line-height:1.3}
+.pk span::before{content:"";width:21px;height:21px;border-radius:6px;border:2px solid #c4ccd6;
+  flex:0 0 auto;background:#fff;transition:all .15s}
+.pk span:hover{border-color:#c4ccd6}
+.pk input:checked + span{border-color:var(--or);background:#fff5ec;color:var(--or-dk)}
+.pk input:checked + span::before{background:var(--or);border-color:var(--or);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 8.5l3 3 6-7' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size:15px;background-position:center;background-repeat:no-repeat}
+.pk input:focus-visible + span{box-shadow:0 0 0 3px rgba(255,122,26,.25)}
+.dupnote{margin-top:9px;background:#fff3e8;border:1px dashed var(--or2);border-radius:10px;
+  padding:10px 13px;font-size:13.2px;color:var(--or-dk);font-weight:700;line-height:1.55}
+.pickcnt{font-size:12.5px;font-weight:800;color:var(--or-dk)}
+
+.agree{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:#5b6472;
+  margin:4px 0 16px;line-height:1.6}
+.agree input{width:18px;height:18px;margin-top:2px;accent-color:var(--or);flex:0 0 auto}
+.agree a{text-decoration:underline}
+.fnote{text-align:center;font-size:12.5px;color:var(--mute);margin-top:12px}
+.msg{margin-top:13px;padding:13px 15px;border-radius:11px;font-size:14.5px;font-weight:700;display:none}
+.msg.ok{display:block;background:#e7f7ef;color:#0b7a4f;border:1px solid #9fe0c3}
+.msg.err{display:block;background:#fdecec;color:#c42b2b;border:1px solid #f5bcbc}
+
+/* ---------- 푸터 / 스티키 ---------- */
+footer{background:var(--ink);color:#8b95a3;padding:44px 0 28px;font-size:13.4px;line-height:1.85}
+footer .lg{font-size:19px;font-weight:900;color:#fff;letter-spacing:-.04em;margin-bottom:10px}
+footer .lg span{color:var(--or)}
+footer a{color:#c9d1dc}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));
+  display:grid;grid-template-columns:1fr 1.25fr;gap:8px;box-shadow:0 -4px 20px rgba(0,0,0,.07)}
+.sticky .btn{padding:14px 10px;font-size:15.5px;border-radius:11px}
+.sticky .tel{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+@media(min-width:900px){.sticky{max-width:420px;left:auto;right:22px;bottom:22px;border-radius:16px;
+  border:1px solid var(--line);padding:10px}}
+
+.fadein{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.fadein.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fadein{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- 상단 고정 바 -->
+<div class="topbar" id="topbar"><div class="in">
+  <div class="lg" id="tbLogo">주영<span>산업</span></div>
+  <div class="sp"></div>
+  <a class="tb-btn g" id="tbTel" href="tel:">전화 상담</a>
+  <a class="tb-btn o" href="#apply" data-cta="topbar">신청하기</a>
+</div></div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <video autoplay muted loop playsinline preload="metadata" poster="images/hero_grid.jpg">
+    <source src="videos/promo.mp4" type="video/mp4" />
+  </video>
+  <div class="wrap">
+    <div class="h-badge"><b id="hbYear">2026</b> 고위험 개선사업 · 접수중</div>
+    <h1>안전은 비용이 아니라<br><em>지원금</em>으로 바꾸세요</h1>
+    <p class="sub">산재보험 가입 <b>1인 이상 50인 미만</b> 사업장이라면,<br>
+      사업장 안전 개선에 필요한 설비를 <b>무상 보조금</b>으로 지원받을 수 있습니다.</p>
+
+    <div class="h-money">
+      <div class="k">무상 보조금 · 최대</div>
+      <div class="v" id="hMax">3,000만원<small>갚지 않는 돈</small></div>
+    </div>
+
+    <div class="h-cta">
+      <a class="btn btn-pri" href="#apply" data-cta="hero">무료로 대상 확인하기</a>
+      <a class="btn btn-gho" id="heroTel" href="tel:">📞 바로 전화상담</a>
+    </div>
+
+    <div class="h-chips">
+      <span class="chip"><b>4개 품목</b> 중복신청 가능</span>
+      <span class="chip">서류작성 <b>전부 대행</b></span>
+      <span class="chip">상담·실측·견적 <b>전액 무료</b></span>
+      <span class="chip">미선정 시 <b>비용 0원</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- 숫자 밴드 -->
+<div class="band"><div class="in">
+  <div class="c"><div class="n">1인 ~ 50인</div><div class="l">신청 가능 사업장 규모</div></div>
+  <div class="c"><div class="n">최대 3,000만원</div><div class="l">무상 보조금 한도</div></div>
+  <div class="c"><div class="n">4개 품목</div><div class="l">중복 신청 가능</div></div>
+  <div class="c"><div class="n">15년+</div><div class="l">정부지원사업 수행경력</div></div>
+</div></div>
+
+<!-- 중복신청 강조 -->
+<section class="dup" style="padding:44px 0">
+  <div class="wrap dup-box fadein">
+    <div>
+      <div class="big">품목은 <em>하나만</em> 고르는 게 아닙니다<br>
+        <mark>필요한 만큼 <em>중복 신청</em>하세요</mark></div>
+      <div class="sm">바닥도장 + 적재대 + 고소작업대를 함께 신청해 보조금 한도를 알뜰하게 채우는 사업장이 많습니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 품목 ================= -->
+<section id="items">
+  <div class="wrap">
+    <div class="sec-head fadein">
+      <span class="eyebrow">SUPPORT ITEMS</span>
+      <h2>지원 가능한 <em>4가지 품목</em></h2>
+      <p>원하는 품목을 눌러 바로 신청서에 담을 수 있습니다. 여러 개 선택해도 됩니다.</p>
+    </div>
+    <div class="items" id="itemGrid"></div>
+  </div>
+</section>
+
+<!-- ================= 보조금 계산 ================= -->
+<section class="calc" id="calc">
+  <div class="wrap">
+    <div class="sec-head fadein">
+      <span class="eyebrow">SUBSIDY</span>
+      <h2>내가 내는 돈은 <em>얼마일까요?</em></h2>
+      <p>총 사업비에서 보조금을 뺀 금액만 부담하시면 됩니다.</p>
+    </div>
+
+    <div class="ex fadein">
+      <div class="t">예를 들어 <b>4,200만원</b>어치를 신청하면</div>
+      <div class="ex-row">
+        <div class="ex-c"><div class="k">총 사업비</div><div class="v">4,200만원</div></div>
+        <div class="ex-op">−</div>
+        <div class="ex-c sub"><div class="k">무상 보조금</div><div class="v">3,000만원</div></div>
+        <div class="ex-op">=</div>
+        <div class="ex-c self"><div class="k">내 부담금</div><div class="v">1,200만원</div></div>
+      </div>
+      <div class="ex-note">※ 보조금은 사업유형·상시근로자 수에 따라 지원비율과 한도가 달라집니다.<br>
+        정확한 금액은 현장 실측 후 견적 단계에서 산출해 드립니다.</div>
+    </div>
+
+    <div class="slider fadein">
+      <div class="lb"><span>총 사업비를 움직여 보세요</span><b id="sVal">4,200만원</b></div>
+      <input type="range" id="sRange" min="500" max="8000" step="100" value="4200" />
+      <div class="out">
+        <div class="s"><div class="k">예상 보조금</div><div class="v" id="sSub">3,000만원</div></div>
+        <div class="f"><div class="k">예상 자부담</div><div class="v" id="sSelf">1,200만원</div></div>
+      </div>
+      <div class="ex-note" style="margin-top:14px">보조율 70% · 한도 3,000만원 기준 단순 계산입니다 (참고용)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 바닥 전/후 ================= -->
+<section class="before" id="floor">
+  <div class="wrap">
+    <div class="sec-head fadein">
+      <span class="eyebrow">FLOOR COATING</span>
+      <h2>이런 바닥, <em>그대로 두시겠습니까?</em></h2>
+      <p>아래는 모두 저희가 실제로 실측 다녀온 사업장의 바닥입니다.</p>
+    </div>
+    <div class="bf-grid fadein" id="bfGrid"></div>
+    <div class="bf-after fadein">
+      <img src="images/item_floor.jpg" alt="바닥도장 시공 후" loading="lazy" />
+      <div class="tx">
+        <h3>새 바닥으로 바꿔 드립니다</h3>
+        <p>기름에 절고, 깨지고, 흙먼지 날리는 바닥은 그 자체가 전도·협착 재해의 원인입니다.
+          바닥도장공사는 보조금 지원 품목이며, 면적 제한 없이 신청하실 수 있습니다.</p>
+        <ul>
+          <li>미끄러짐 · 걸려넘어짐 재해 예방</li>
+          <li>분진 비산 억제 → 호흡기 보호</li>
+          <li>통로 · 적재구역 구획선 도색 포함 가능</li>
+          <li>현장 실측 후 정확한 견적 제공 (무료)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 납품 갤러리 ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head fadein">
+      <span class="eyebrow">DELIVERY</span>
+      <h2>직접 납품하고 <em>설치합니다</em></h2>
+      <p>장비 공급부터 설치·교육·완료보고까지 한 곳에서 처리합니다.</p>
+    </div>
+    <div class="gal fadein" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- ================= 절차 ================= -->
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head fadein">
+      <span class="eyebrow">PROCESS</span>
+      <h2>신청부터 설치까지 <em>5단계</em></h2>
+      <p>고객사가 하실 일은 1단계와 서명뿐입니다. 나머지는 저희가 합니다.</p>
+    </div>
+    <div class="steps fadein" id="stepGrid"></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head fadein">
+      <span class="eyebrow">FAQ</span>
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq fadein" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ================= 신청 ================= -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="fm fadein">
+      <div class="fm-hd">
+        <div class="k">FREE CONSULTING</div>
+        <h3>무료 대상 확인 신청</h3>
+        <p>상담 · 실측 · 견적 전부 무료입니다. 영업일 1일 이내 연락드립니다.</p>
+      </div>
+      <div class="fm-bd">
+        <form id="leadForm" autocomplete="on" novalidate>
+
+          <!-- ★ 품목 중복 선택 -->
+          <div class="fgrp">
+            <label class="lb">관심 품목<span class="req">*</span>
+              <span class="hint">여러 개 선택 가능</span>
+              <span class="pickcnt" id="pickCnt" style="float:right"></span>
+            </label>
+            <div class="picks" id="pickBox"></div>
+            <div class="dupnote">✔ 이 사업은 <u>품목 중복 신청이 가능</u>합니다. 필요한 품목을 모두 체크해 주세요.</div>
+          </div>
+
+          <div class="fgrp">
+            <label class="lb">업체명<span class="req">*</span></label>
+            <input type="text" name="company" placeholder="예) 주영산업" required />
+          </div>
+
+          <div class="g2">
+            <div class="fgrp">
+              <label class="lb">담당자 성함<span class="req">*</span></label>
+              <input type="text" name="manager" placeholder="예) 홍길동" required />
+            </div>
+            <div class="fgrp">
+              <label class="lb">직책</label>
+              <input type="text" name="position" placeholder="예) 시설팀장" />
+            </div>
+          </div>
+
+          <div class="g2">
+            <div class="fgrp">
+              <label class="lb">연락처<span class="req">*</span></label>
+              <input type="tel" name="phone" inputmode="numeric" placeholder="010-1234-5678" required />
+            </div>
+            <div class="fgrp">
+              <label class="lb">상시근로자 수</label>
+              <select name="headcount">
+                <option value="">선택해 주세요</option>
+                <option>5인 미만</option>
+                <option>5 ~ 9인</option>
+                <option>10 ~ 29인</option>
+                <option>30 ~ 49인</option>
+                <option>50인 이상</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fgrp">
+            <label class="lb">사업장 주소<span class="req">*</span></label>
+            <input type="text" name="address" placeholder="예) 경기도 화성시 ○○읍 ○○로" required />
+          </div>
+
+          <div class="fgrp">
+            <label class="lb">문의 내용 <span class="hint">선택</span></label>
+            <textarea name="memo" rows="2" placeholder="예) 공장 바닥 300평 정도 됩니다. 적재대도 같이 보고 싶어요."></textarea>
+          </div>
+
+          <label class="agree">
+            <input type="checkbox" name="agree" required />
+            <span>개인정보 수집·이용에 동의합니다. (수집항목: 업체명·담당자·연락처·주소 / 목적: 지원사업 상담 / 보유: 상담 종료 후 1년)</span>
+          </label>
+
+          <button type="submit" class="btn btn-pri btn-lg" id="submitBtn">무료 상담 신청하기</button>
+          <div class="fnote">제출 후 영업일 기준 1일 이내에 연락드립니다.</div>
+          <div class="msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="lg" id="ftLogo">주영<span>산업</span></div>
+    <div id="ftInfo"></div>
+    <div style="margin-top:14px;font-size:12.4px;color:#6b7684">
+      ※ 본 페이지는 정부·공공기관 지원사업 안내를 위한 민간 사업자의 홍보 페이지이며, 공공기관의 공식 사이트가 아닙니다.<br>
+      ※ 지원 대상·지원 비율·한도는 사업 공고 및 심사 결과에 따라 달라질 수 있습니다.
+    </div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn tel" id="stTel" href="tel:">📞 전화</a>
+  <a class="btn btn-pri" href="#apply" data-cta="sticky">무료 신청하기</a>
+</div>
+
+<!-- ====================================================================== -->
+<!--  [2] 동작 스크립트                                                       -->
+<!-- ====================================================================== -->
+<script>
+(function(){
+  const $  = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const man = n => (n>=10000 ? (n/10000).toLocaleString('ko-KR') + '만원' : n.toLocaleString('ko-KR')+'원');
+
+  /* ---- 연락처 주입 ---- */
+  const tel = 'tel:' + CFG.phone.replace(/[^0-9]/g,'');
+  ['#heroTel','#stTel','#tbTel'].forEach(s=>{ const e=$(s); if(e) e.href = tel; });
+  $('#hbYear').textContent = CFG.year;
+  $('#hMax').innerHTML = (CFG.maxSubsidy/10000).toLocaleString('ko-KR')+'만원<small>갚지 않는 돈</small>';
+  const bn = CFG.brand;
+  [$('#tbLogo'),$('#ftLogo')].forEach(e=>{ e.innerHTML = bn.slice(0,2)+'<span>'+bn.slice(2)+'</span>'; });
+  $('#ftInfo').innerHTML =
+    CFG.bizName + ' · 담당 ' + CFG.contact + '<br>' +
+    '상담문의 <a href="'+tel+'"><b>'+CFG.phone+'</b></a> (24시간 통화 가능)<br>' +
+    '&copy; ' + new Date().getFullYear() + ' ' + CFG.brand + '. All rights reserved.';
+
+  /* ---- 품목 카드 ---- */
+  $('#itemGrid').innerHTML = CFG.items.map((it,i)=>`
+    <article class="card">
+      <div class="ph">
+        <img src="${it.img}" alt="${it.name}" loading="lazy"
+             onerror="this.closest('.ph').style.background='#e9edf2';this.style.display='none'">
+        <span class="tag">${it.tag}</span><span class="no">${i+1}</span>
+      </div>
+      <div class="bd">
+        <div class="en">${it.en}</div>
+        <h3>${it.name}</h3>
+        <p class="ds">${it.desc}</p>
+        <ul>${it.specs.map(s=>`<li>${s}</li>`).join('')}</ul>
+        <div class="pick js-pick" data-key="${it.key}">＋ 이 품목 신청서에 담기</div>
+      </div>
+    </article>`).join('');
+
+  /* ---- 품목 체크박스 ---- */
+  $('#pickBox').innerHTML = CFG.items.map(it=>`
+    <label class="pk">
+      <input type="checkbox" name="items" value="${it.name}" data-key="${it.key}">
+      <span>${it.name}</span>
+    </label>`).join('');
+
+  const boxes = $$('#pickBox input[name=items]');
+  const cnt   = $('#pickCnt');
+  function refreshCnt(){
+    const n = boxes.filter(b=>b.checked).length;
+    cnt.textContent = n ? n+'개 선택됨' : '';
+  }
+  boxes.forEach(b=>b.addEventListener('change',refreshCnt));
+
+  // 카드의 "담기" 버튼 → 체크박스 체크 + 폼으로 이동
+  $$('.js-pick').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const b = boxes.find(x=>x.dataset.key===el.dataset.key);
+      if(b && !b.checked){ b.checked = true; refreshCnt(); }
+      if(window.fbq) fbq('trackCustom','PickItem',{item:el.dataset.key});
+      document.getElementById('apply').scrollIntoView({behavior:'smooth'});
+      el.textContent = '✔ 신청서에 담겼습니다';
+      setTimeout(()=>{ el.textContent = '＋ 이 품목 신청서에 담기'; }, 2600);
+    });
+  });
+
+  /* ---- 바닥 전/후 ---- */
+  const bfCaps = ['기름에 절은 바닥','마모된 콘크리트','표면 박리','도장 들뜸','깨진 통로','갈라진 바닥','먼지 날림','차선 지워짐','노후 바닥'];
+  $('#bfGrid').innerHTML = bfCaps.map((c,i)=>`
+    <figure><img src="images/gal_floor${i+1}.jpg" alt="${c}" loading="lazy"
+      onerror="this.closest('figure').remove()"><figcaption>${c}</figcaption></figure>`).join('');
+
+  /* ---- 납품 갤러리 ---- */
+  $('#galGrid').innerHTML = Array.from({length:6},(_,i)=>`
+    <figure><img src="images/gal_awp${i+1}.jpg" alt="납품 및 설치 현장 ${i+1}" loading="lazy"
+      onerror="this.closest('figure').remove()"></figure>`).join('');
+
+  /* ---- 절차 ---- */
+  $('#stepGrid').innerHTML = CFG.steps.map(([n,t,d],i)=>`
+    <div class="step${i===0?' hi':''}"><div class="n">${n}</div><h4>${t}</h4><p>${d}</p></div>`).join('');
+
+  /* ---- FAQ ---- */
+  $('#faqList').innerHTML = CFG.faq.map(([q,a],i)=>`
+    <details class="fq"${i===0?' open':''}><summary>${q}</summary><div class="a">${a}</div></details>`).join('');
+
+  /* ---- 보조금 슬라이더 ---- */
+  const r=$('#sRange');
+  function calc(){
+    const total = (+r.value)*10000;                 // 만원 → 원
+    const sub   = Math.min(Math.floor(Math.round(total*0.7)/10000)*10000, CFG.maxSubsidy);
+    $('#sVal').textContent  = man(total);
+    $('#sSub').textContent  = man(sub);
+    $('#sSelf').textContent = man(total-sub);
+  }
+  r.addEventListener('input',calc); calc();
+
+  /* ---- 상단바 노출 ---- */
+  const tb=$('#topbar');
+  addEventListener('scroll',()=>{ tb.classList.toggle('show', scrollY>520); },{passive:true});
+
+  /* ---- 등장 애니메이션 ---- */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }),{threshold:.1});
+  $$('.fadein').forEach(e=>io.observe(e));
+
+  /* ---- CTA 추적 ---- */
+  $$('[data-cta]').forEach(el=>el.addEventListener('click',()=>{
+    if(window.fbq) fbq('trackCustom','ClickApply',{from:el.dataset.cta});
+  }));
+  $$('a[href^="tel:"]').forEach(el=>el.addEventListener('click',()=>{
+    if(window.fbq) fbq('trackCustom','ClickCall');
+    if(window.gtag && TRACK.googleAdsId) gtag('event','click_call');
+  }));
+
+  /* ---- 전화번호 자동 하이픈 ---- */
+  const form=$('#leadForm'), msg=$('#formMsg'), btn=$('#submitBtn');
+  form.phone.addEventListener('input',e=>{
+    let v=e.target.value.replace(/[^0-9]/g,'').slice(0,11);
+    if(v.length>3&&v.length<=7) v=v.replace(/(\d{3})(\d+)/,'$1-$2');
+    else if(v.length>7)        v=v.replace(/(\d{3})(\d{4})(\d+)/,'$1-$2-$3');
+    e.target.value=v;
+  });
+
+  function show(t,k){ msg.textContent=t; msg.className='msg '+k;
+    msg.scrollIntoView({behavior:'smooth',block:'center'}); }
+
+  /* ---- 제출 ---- */
+  form.addEventListener('submit', async e=>{
+    e.preventDefault();
+    const picked = boxes.filter(b=>b.checked).map(b=>b.value);
+    if(!picked.length)              return show('관심 품목을 1개 이상 선택해 주세요. (중복 선택 가능)','err');
+    if(!form.company.value.trim())  return show('업체명을 입력해 주세요.','err');
+    if(!form.manager.value.trim())  return show('담당자 성함을 입력해 주세요.','err');
+    if(form.phone.value.replace(/[^0-9]/g,'').length < 9)
+                                    return show('연락처를 정확히 입력해 주세요.','err');
+    if(!form.address.value.trim())  return show('사업장 주소를 입력해 주세요.','err');
+    if(!form.agree.checked)         return show('개인정보 수집·이용 동의가 필요합니다.','err');
+
+    btn.disabled=true; btn.textContent='전송 중...';
+
+    const data = {
+      program:   '고위험 개선사업',
+      item:      picked.join(', '),      // 기존 시트 호환 (한 칸에 콤마로)
+      itemCount: picked.length,
+      items:     JSON.stringify(picked),
+      company:   form.company.value.trim(),
+      manager:   form.manager.value.trim(),
+      position:  form.position.value.trim(),
+      phone:     form.phone.value.trim(),
+      headcount: form.headcount.value,
+      address:   form.address.value.trim(),
+      memo:      form.memo.value.trim(),
+      pageUrl:   location.href,
+      submittedAt: new Date().toISOString()
+    };
+
+    try{
+      if(ENDPOINT && !ENDPOINT.startsWith('PASTE')){
+        await fetch(ENDPOINT,{method:'POST',mode:'no-cors',
+          headers:{'Content-Type':'application/x-www-form-urlencoded'},
+          body:new URLSearchParams(data).toString()});
+      }
+      if(window.fbq) fbq('track','Lead',{content_name:data.item,num_items:picked.length});
+      if(window.gtag && TRACK.googleAdsId && TRACK.gadsConversionLabel){
+        gtag('event','conversion',{send_to:TRACK.googleAdsId+'/'+TRACK.gadsConversionLabel,value:1,currency:'KRW'});
+      }
+      form.reset(); refreshCnt();
+      show('신청이 접수되었습니다. 빠르게 연락드리겠습니다!','ok');
+    }catch(err){
+      show('전송 중 오류가 발생했습니다. '+CFG.phone+' 로 전화 주세요.','err');
+    }finally{
+      btn.disabled=false; btn.textContent='무료 상담 신청하기';
+    }
+  });
+
+  /* ---- 히어로 영상 자동재생 보조 ---- */
+  const v=document.querySelector('.hero video');
+  if(v){ const kick=()=>v.play().catch(()=>{});
+    v.addEventListener('loadeddata',kick);
+    ['touchstart','click','scroll'].forEach(t=>addEventListener(t,kick,{once:true,passive:true})); }
+})();
+</script>
+
+<!-- ====================================================================== -->
+<!--  [3] 광고 픽셀 — TRACK 값을 채우면 자동으로 로드됩니다                     -->
+<!-- ====================================================================== -->
+<script>
+(function(){
+  if(TRACK.metaPixel){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',TRACK.metaPixel); fbq('track','PageView');
+  }
+  const gid = TRACK.googleAdsId || TRACK.ga4Id;
+  if(gid){
+    const s=document.createElement('script'); s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+gid; document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments)};
+    gtag('js',new Date());
+    if(TRACK.ga4Id)       gtag('config',TRACK.ga4Id);
+    if(TRACK.googleAdsId) gtag('config',TRACK.googleAdsId);
+  }
+})();
+</script>
+</body>
+</html>
